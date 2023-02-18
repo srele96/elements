@@ -1,7 +1,7 @@
 {
   "name": "@flexos/elements",
   "description": "Generate creative sequence of elements.",
-  "version": "0.10.0",
+  "version": "0.1.0",
   "author": "Kostic Srecko",
   "repository": {
     "type": "git",
@@ -18,7 +18,11 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
+    "chalk": "^4.0.0",
+    "execa": "^5.0.0",
+    "enquirer": "^2.3.6",
     "jest": "^29.3.1",
-    "rollup": "^3.9.1"
+    "rollup": "^3.9.1",
+    "semver": "^7.3.8"
   }
 }
