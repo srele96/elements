@@ -3,6 +3,9 @@
   "description": "Generate creative sequence of elements.",
   "version": "0.1.0",
   "author": "Kostic Srecko",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/srele96/elements.git"
