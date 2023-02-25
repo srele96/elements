@@ -41,7 +41,7 @@ function toCamelCase(name) {
 module.exports = defineConfig({
   input: path.resolve(__dirname, 'src', 'index.js'),
   output: {
-    file: `build/dist/${toDashCase(packageJson.name)}.umd.js`,
+    file: `dist/${toDashCase(packageJson.name)}.umd.js`,
     format: 'umd',
     name: toCamelCase(packageJson.name),
   },

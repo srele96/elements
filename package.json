@@ -1,7 +1,7 @@
 {
   "name": "@flexos/elements",
   "description": "Generate creative sequence of elements.",
-  "version": "0.10.0",
+  "version": "0.1.0",
   "author": "Kostic Srecko",
   "repository": {
     "type": "git",
