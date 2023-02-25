@@ -17,11 +17,16 @@
   "scripts": {
     "test": "jest --watch",
     "build": "rollup -c",
-    "release": "node ./scripts/release.js"
+    "release": "rimraf dist && node ./scripts/release.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
+    "chalk": "^4.0.0",
+    "enquirer": "^2.3.6",
+    "execa": "^5.0.0",
     "jest": "^29.3.1",
-    "rollup": "^3.9.1"
+    "rimraf": "^4.1.2",
+    "rollup": "^3.9.1",
+    "semver": "^7.3.8"
   }
 }
