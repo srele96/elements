@@ -9,3 +9,7 @@
 7. Publish: `npm publish --access=public`
 8. Push created tag: `git push origin refs/tags/v0.1.1`
 9. Push: `git push origin release/0.1.1`
+
+## Note
+
+If I created release script it should be able to handle failure at any step and proceed because after publishing to npm, i can't un-publish it. Once non-reversible step has been completed, we can not allow the publish script to fail.
