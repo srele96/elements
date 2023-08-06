@@ -1,10 +1,10 @@
-const { get_elements } = require('./index');
+const { generate_sequence } = require('../generate_sequence');
 
-describe('elements', () => {
+describe('generate_sequence', () => {
   test('should return correct array of elements', () => {
     const length = 7;
     const main_element = 4;
-    const elements = get_elements({ length })(main_element);
+    const elements = generate_sequence({ length })(main_element);
 
     expect(elements).toEqual([
       { order: -3 },
@@ -22,7 +22,7 @@ describe('elements', () => {
     () => {
       const length = 7;
       const main_element = 1;
-      const elements = get_elements({ length })(main_element);
+      const elements = generate_sequence({ length })(main_element);
 
       expect(elements).toEqual([
         { order: 0 },
@@ -41,7 +41,7 @@ describe('elements', () => {
     () => {
       const length = 7;
       const main_element = 7;
-      const elements = get_elements({ length })(main_element);
+      const elements = generate_sequence({ length })(main_element);
 
       expect(elements).toEqual([
         { order: -6 },
@@ -61,7 +61,7 @@ describe('elements', () => {
     () => {
       const length = 7;
       const main_element = 6;
-      const elements = get_elements({ length })(main_element);
+      const elements = generate_sequence({ length })(main_element);
 
       expect(elements).toEqual([
         { order: -5 },
@@ -76,7 +76,7 @@ describe('elements', () => {
   );
 
   test('should throw when options are missing', () => {
-    expect(() => get_elements()).toThrow('options are required');
+    expect(() => generate_sequence()).toThrow('options are required');
   });
 
   test('should throw when length is invalid', () => {
@@ -94,7 +94,7 @@ describe('elements', () => {
     };
 
     Object.values(length).forEach((value) => {
-      expect(() => get_elements({ length: value })).toThrow(
+      expect(() => generate_sequence({ length: value })).toThrow(
         get_error_message(value)
       );
     });
@@ -103,7 +103,7 @@ describe('elements', () => {
   test('should throw when main element is missing', () => {
     const length = 3;
 
-    expect(() => get_elements({ length })()).toThrow(
+    expect(() => generate_sequence({ length })()).toThrow(
       'main_element must be a number, received undefined'
     );
   });
@@ -112,7 +112,7 @@ describe('elements', () => {
     const length = 3;
     const out_of_range = 4;
 
-    expect(() => get_elements({ length })(out_of_range)).toThrow(
+    expect(() => generate_sequence({ length })(out_of_range)).toThrow(
       'main_element out of range'
     );
   });
@@ -120,7 +120,7 @@ describe('elements', () => {
   test('should modify elements with callback correctly', () => {
     const length = 7;
     const main_element = 4;
-    const elements = get_elements({
+    const elements = generate_sequence({
       length,
       callback: (element) => {
         return {
