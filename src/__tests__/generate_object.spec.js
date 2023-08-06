@@ -7,6 +7,8 @@ describe('generate_object', () => {
     expect(() => generate_object({ data: {} })).toThrow();
   });
 
+  test.todo('should throw an error if all option.data arrays are empty');
+
   test('should not throw an error if only option.data is provided with many properties', () => {
     const data = [
       { a: [1] },
