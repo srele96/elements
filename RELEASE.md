@@ -1,5 +1,7 @@
 # Release
 
+**_(TODO: Improve the documentation. It is too easy to make release number mistake.)_**
+
 1. Update the version number in `package.json`
 2. Build the release: `yarn build`
 3. Create release branch: `git checkout -b release/v0.1.1`
