@@ -17,6 +17,13 @@ function generate_object(option) {
             'All option.data values must be arrays, received ' + typeof value
           );
         }
+
+        if (value.length === 0) {
+          throw new Error(
+            'All option.data arrays must have at least one value'
+          );
+        }
+
         lengths.add(value.length);
         if (lengths.size > 1) {
           throw new Error('All option.data arrays must be of the same length');
